@@ -1,2 +1,2 @@
 # modelviz
-## This package allows the user to interactively visualiize tellurium simulations.
+## This package allows interactive visualization of tellurium simulations

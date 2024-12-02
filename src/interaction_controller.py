@@ -9,12 +9,15 @@ class InteractionController:
         self.sim_engine = SimulationEngine()
         self.vis_manager = VisualizationManager()
 
-    def run(self):
+    def get_user_input(self):
+        """Retrieve model source from command-line arguments."""
         if len(sys.argv) < 2:
             print("Usage: python main.py <model_path_or_url>")
             sys.exit(1)
+        return sys.argv[1]  # Get the file path or URL from command-line arguments
 
-        model_source = sys.argv[1]
+    def run(self):
+        model_source = self.get_user_input()  # Call to get user input
 
         try:
             # Load model and run simulation
@@ -29,3 +32,4 @@ class InteractionController:
         except Exception as e:
             print(f"Error: {e}")
             sys.exit(1)
+

@@ -1,25 +1,20 @@
 # this module handles visualizations
 
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+import numpy as np
 
 class VisualizationManager:
-    def plot_bar_chart(self, data, species_names):
-        """Plot a static bar chart for the given data."""
-        plt.bar(species_names, data)
-        plt.xlabel("Species")
-        plt.ylabel("Concentration")
-        plt.show()
-
-    def animate_bar_chart(self, time_series, species_names, interval=200):
-        """Create an animated bar chart."""
-        fig, ax = plt.subplots()
-        bars = ax.bar(species_names, time_series[0])
+    def animate_bar_chart(self, time_series, species_names):
+        # Ensure the species_names match the number of species in time_series
+        if len(species_names) != time_series.shape[1]:
+            raise ValueError(f"Number of species names ({len(species_names)}) does not match number of time series columns ({time_series.shape[1]})")
         
-        def update(frame):
-            for bar, height in zip(bars, time_series[frame]):
-                bar.set_height(height)
-            return bars
+        # Plotting the first time point (you can change this to any specific time step)
+        fig, ax = plt.subplots()
+        bars = ax.bar(species_names, time_series[0])  # time_series[0] is the first time step
+        
+        ax.set_xlabel('Species')
+        ax.set_ylabel('Concentration')
+        ax.set_title('Concentration of Species at Time 0')
 
-        ani = FuncAnimation(fig, update, frames=len(time_series), interval=interval, blit=True)
         plt.show()

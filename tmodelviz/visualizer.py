@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from ipywidgets import FloatSlider, Play, jslink, interact, HBox
-from IPython.display import display
 from utils import calculate_rolling_average, extract_fluxes
 
 def plot_interactive_visualization(url, start_time=0, end_time=10, steps=100):
@@ -67,4 +66,4 @@ def plot_interactive_visualization(url, start_time=0, end_time=10, steps=100):
     jslink((play, "value"), (slider, "value"))
 
     interact(plot_bars, timestep=slider)
-    display(HBox([play]))
+    display(HBox([play])) # type: ignore

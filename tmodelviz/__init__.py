@@ -1,1 +1,1 @@
-from .visualizer import plotviz
+from .visualizer import plotviz # makes plotviz available to the user

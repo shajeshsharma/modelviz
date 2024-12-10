@@ -21,5 +21,5 @@ def load_and_simulate(model_input: str, start_time: float, end_time: float, step
     else:
         runner = te.loada(model_input)  # Load from Antimony string
 
-    data = runner.simulate(start_time, end_time, steps)
+    data = runner.simulate(start_time, end_time, steps) #return simulation data
     return runner, data

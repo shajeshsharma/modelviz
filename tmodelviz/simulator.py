@@ -2,12 +2,12 @@
 
 import tellurium as te
 
-def load_and_simulate(url, start_time, end_time, steps):
+def load_and_simulate(model_input, start_time, end_time, steps):
     """
-    Loads an SBML model from the given URL and simulates it.
+    Loads a model (from an SBML URL/path or an Antimony string) and simulates it.
     
     Args:
-        url (str): Path to the SBML file or URL.
+        model_input (str): URL/path to the SBML file or an Antimony string.
         start_time (float): Start time for the simulation.
         end_time (float): End time for the simulation.
         steps (int): Number of steps in the simulation.
@@ -15,6 +15,11 @@ def load_and_simulate(url, start_time, end_time, steps):
     Returns:
         tuple: A tuple containing the runner object and simulation data.
     """
-    runner = te.loadSBMLModel(url)
+    # Check if input is a URL or file path
+    if model_input.startswith("http") and model_input.endswith(".xml"):
+        runner = te.loadSBMLModel(model_input)  # Load from URL
+    else:
+        runner = te.loada(model_input)  # Load from Antimony string
+
     data = runner.simulate(start_time, end_time, steps)
     return runner, data

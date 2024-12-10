@@ -1,2 +1,13 @@
 # tmodelviz
-## This package allows interactive visualization of tellurium simulations in a jupyter notebook. 
+
+`tmodelviz` is a Python package for simulating and visualizing biochemical models using Tellurium in a jupyter notebook.
+
+## Features
+- Load and simulate SBML models.
+- Calculate rolling averages and fluxes.
+- Interactive visualizations using Matplotlib and ipywidgets.
+
+## Installation
+
+```bash
+pip install tmodelviz

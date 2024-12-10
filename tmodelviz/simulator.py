@@ -2,7 +2,7 @@
 
 import tellurium as te
 
-def load_and_simulate(model_input, start_time, end_time, steps):
+def load_and_simulate(model_input: str, start_time: float, end_time: float, steps: int):
     """
     Loads a model (from an SBML URL/path or an Antimony string) and simulates it.
     

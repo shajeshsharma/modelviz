@@ -2,9 +2,6 @@ import pytest
 from unittest.mock import patch, MagicMock
 from tmodelviz.visualizer import plotviz
 
-# test_visualizer.py
-
-
 @patch('tmodelviz.visualizer.load_and_simulate')
 @patch('tmodelviz.visualizer.calculate_rolling_average')
 @patch('tmodelviz.visualizer.extract_fluxes')

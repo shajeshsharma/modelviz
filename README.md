@@ -3,8 +3,8 @@
 `tmodelviz` is a Python package for simulating and visualizing biochemical models using Tellurium in a jupyter notebook.
 
 ## Features
-- Load and simulate SBML and antimony models.
-- Calculate rolling averages and fluxes.
+- Load and simulate SBML or antimony models.
+- Calculate concentrations of chemical species, changes in concentration, rolling averages and fluxes at a range of timesteps.
 - Interactive visualizations using Matplotlib and ipywidgets.
 
 ## Installation

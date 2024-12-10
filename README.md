@@ -5,7 +5,7 @@
 ## Features
 - Load and simulate SBML or antimony models.
 - Calculate concentrations of chemical species, changes in concentration, rolling averages and fluxes at a range of timesteps.
-- Interactive visualizations using Matplotlib and ipywidgets.
+- Interactively visualize simulations using Matplotlib and ipywidgets.
 
 ## Installation
 
